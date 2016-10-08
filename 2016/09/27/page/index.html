@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>熙风的博客|xfeng</title>
+  <title>LAMP和LNMP的搭建 | 熙风的博客|xfeng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="xfeng&apos;s blog | java | scala | bi">
-<meta property="og:type" content="website">
-<meta property="og:title" content="熙风的博客|xfeng">
-<meta property="og:url" content="http://lolmo.cn/index.html">
+  <meta name="description" content="1.LAMPLAMP指的是linux(操作系统)、apache的http服务器、mysql数据库和PHP(perl或者python)，用于建立web应用平台，这些软件都是免费和开源的所以在企业相当流行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LAMP和LNMP的搭建">
+<meta property="og:url" content="http://lolmo.cn/2016/09/27/page/index.html">
 <meta property="og:site_name" content="熙风的博客|xfeng">
-<meta property="og:description" content="xfeng&apos;s blog | java | scala | bi">
+<meta property="og:description" content="1.LAMPLAMP指的是linux(操作系统)、apache的http服务器、mysql数据库和PHP(perl或者python)，用于建立web应用平台，这些软件都是免费和开源的所以在企业相当流行">
+<meta property="og:updated_time" content="2016-10-08T14:11:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="熙风的博客|xfeng">
-<meta name="twitter:description" content="xfeng&apos;s blog | java | scala | bi">
+<meta name="twitter:title" content="LAMP和LNMP的搭建">
+<meta name="twitter:description" content="1.LAMPLAMP指的是linux(操作系统)、apache的http服务器、mysql数据库和PHP(perl或者python)，用于建立web应用平台，这些软件都是免费和开源的所以在企业相当流行">
   
     <link rel="alternate" href="/atom.xml" title="熙风的博客|xfeng" type="application/atom+xml">
   
@@ -69,9 +70,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-page" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-page" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/09/27/page/" class="article-date">
   <time datetime="2016-09-27T15:13:51.000Z" itemprop="datePublished">2016-09-27</time>
@@ -84,8 +83,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/27/page/">LAMP和LNMP的搭建</a>
+    <h1 class="article-title" itemprop="name">
+      LAMP和LNMP的搭建
     </h1>
   
 
@@ -93,12 +92,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-LAMP"><a href="#1-LAMP" class="headerlink" title="1.LAMP"></a>1.LAMP</h1><p>LAMP指的是linux(操作系统)、apache的http服务器、mysql数据库和PHP(perl或者python)，用于建立web应用平台，这些软件都是免费和开源的所以在企业相当流行<br>
-        
-          <p class="article-more-link">
-            <a href="/2016/09/27/page/#more">Read More</a>
-          </p>
-        
+        <h1 id="1-LAMP"><a href="#1-LAMP" class="headerlink" title="1.LAMP"></a>1.LAMP</h1><p>LAMP指的是linux(操作系统)、apache的http服务器、mysql数据库和PHP(perl或者python)，用于建立web应用平台，这些软件都是免费和开源的所以在企业相当流行<br><a id="more"></a></p>
+<p>##linux<br>发行版的linux系统很多。根据需求一般采用centos或者redhat等系统</p>
+<p>##apache<br>apache是一个开源组织他旗下有许多开源产品，其中最出名的是web服务，所以很多人误以为apache是一个web开源软件，其实并不是，这里说下web服务器的搭建</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$ yum install -y httpd</div><div class="line">$ vim /etc/httpd/conf.d/example.com.conf</div><div class="line">NameVirtualHost *:80</div><div class="line">#DirectoryIndex index.html index.html.var index.php</div><div class="line">#AddType application/x-httpd-php .php                 这两个选项是支持php</div><div class="line">&lt;VirtualHost *:80&gt;</div><div class="line">    ServerAdmin xfeng@lolmo.cn</div><div class="line">    DocumentRoot /www/up.com/</div><div class="line">    ServerName up.com</div><div class="line">    ErrorLog logs/up.com-error_log</div><div class="line">    CustomLog logs/up.com-access_log common</div><div class="line">    WSGIDaemonProcess mywsgi processes=2 threads=5 </div><div class="line">    WSGIProcessGroup mywsgi</div><div class="line">    WSGIApplicationGroup %&#123;GLOBAL&#125;</div><div class="line">&lt;/VirtualHost&gt;</div><div class="line">$ /etc/init.d/httpd restart</div></pre></td></tr></table></figure>
+
       
     </div>
     <footer class="article-footer">
@@ -110,144 +108,38 @@
     </footer>
   </div>
   
-</article>
-
- 
-
+    
+<nav id="article-nav">
   
-    <article id="post-9-26" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/26/9-26/" class="article-date">
-  <time datetime="2016-09-26T12:46:57.000Z" itemprop="datePublished">2016-09-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/26/9-26/">在linux下的文件文件共享</a>
-    </h1>
+    <a href="/2016/09/26/9-26/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">在linux下的文件文件共享</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在linux系统中共享文件的方式有很多种包括NFS、FTP、HTTP等，这里只做最基本的配置介绍。<br>
-        
-          <p class="article-more-link">
-            <a href="/2016/09/26/9-26/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lolmo.cn/2016/09/26/9-26/" data-id="citv4nkce000048n0kol90ssu" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
  
-
+  <section id="comments">
+    <div class="ds-thread" data-thread-key="post-page" data-title="LAMP和LNMP的搭建" data-url="http://lolmo.cn/2016/09/27/page/"></div>
+    <script type="text/javascript">
+    var duoshuoQuery = {
+        short_name:'lolmo',
+        };
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
   
-    <article id="post-9-24" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/24/9-24/" class="article-date">
-  <time datetime="2016-09-24T05:24:54.000Z" itemprop="datePublished">2016-09-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/24/9-24/">yum命令的使用和配置软件仓库</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>在使用centos或者redhat系统时候，安装软件会变得比较麻烦，特别是解决软件依赖问题，所以使用yum包管理起来就比较方便。</strong><br>
-        
-          <p class="article-more-link">
-            <a href="/2016/09/24/9-24/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lolmo.cn/2016/09/24/9-24/" data-id="citv4nkco000348n0pkj0e7fa" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
- 
-
-  
-    <article id="post-9-20" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/09/20/9-20/" class="article-date">
-  <time datetime="2016-09-20T12:41:06.000Z" itemprop="datePublished">2016-09-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/20/9-20/">linux+git+github+node.js+hexo+domain搭建自己的博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>github称程序员的facebook，在上面我们可以托管自己的项目，也可以去找自己喜欢或者有用的项目资源，当然还可以部署属于自己的博客，毕竟他是免费的。</strong><br>
-        
-          <p class="article-more-link">
-            <a href="/2016/09/20/9-20/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lolmo.cn/2016/09/20/9-20/" data-id="citv4nkd9000848n0qs3sgm7r" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
- 
-
-  
-
 </section>
         
           <aside id="sidebar">
