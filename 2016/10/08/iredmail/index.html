@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LAMP和LNMP的搭建 | 熙风的博客|xfeng</title>
+  <title>iredmail | 熙风的博客|xfeng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.LAMPLAMP指的是linux(操作系统)、apache的http服务器、mysql数据库和PHP(perl或者python)，用于建立web应用平台，这些软件都是免费和开源的所以在企业相当流行">
+  <meta name="description" content="关于邮件服务器的搭建，如果只是希望有个个性化的域名邮件，直接运用企业邮局就可以了，这样可以节省一笔不小的开销，除非你的邮件是相当重要的，不希望被任何人看到，你可以考虑直接搭建，这里介绍iredmail的解决方案">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LAMP和LNMP的搭建">
-<meta property="og:url" content="http://lolmo.cn/2016/09/27/page/index.html">
+<meta property="og:title" content="iredmail">
+<meta property="og:url" content="http://lolmo.cn/2016/10/08/iredmail/index.html">
 <meta property="og:site_name" content="熙风的博客|xfeng">
-<meta property="og:description" content="1.LAMPLAMP指的是linux(操作系统)、apache的http服务器、mysql数据库和PHP(perl或者python)，用于建立web应用平台，这些软件都是免费和开源的所以在企业相当流行">
-<meta property="og:updated_time" content="2016-10-08T14:11:09.000Z">
+<meta property="og:description" content="关于邮件服务器的搭建，如果只是希望有个个性化的域名邮件，直接运用企业邮局就可以了，这样可以节省一笔不小的开销，除非你的邮件是相当重要的，不希望被任何人看到，你可以考虑直接搭建，这里介绍iredmail的解决方案">
+<meta property="og:updated_time" content="2016-10-08T15:02:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LAMP和LNMP的搭建">
-<meta name="twitter:description" content="1.LAMPLAMP指的是linux(操作系统)、apache的http服务器、mysql数据库和PHP(perl或者python)，用于建立web应用平台，这些软件都是免费和开源的所以在企业相当流行">
+<meta name="twitter:title" content="iredmail">
+<meta name="twitter:description" content="关于邮件服务器的搭建，如果只是希望有个个性化的域名邮件，直接运用企业邮局就可以了，这样可以节省一笔不小的开销，除非你的邮件是相当重要的，不希望被任何人看到，你可以考虑直接搭建，这里介绍iredmail的解决方案">
   
     <link rel="alternate" href="/atom.xml" title="熙风的博客|xfeng" type="application/atom+xml">
   
@@ -70,10 +70,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-page" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-iredmail" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/09/27/page/" class="article-date">
-  <time datetime="2016-09-27T15:13:51.000Z" itemprop="datePublished">2016-09-27</time>
+    <a href="/2016/10/08/iredmail/" class="article-date">
+  <time datetime="2016-10-08T14:14:53.000Z" itemprop="datePublished">2016-10-08</time>
 </a>
     
   </div>
@@ -84,7 +84,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      LAMP和LNMP的搭建
+      iredmail
     </h1>
   
 
@@ -92,18 +92,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-LAMP"><a href="#1-LAMP" class="headerlink" title="1.LAMP"></a>1.LAMP</h1><p>LAMP指的是linux(操作系统)、apache的http服务器、mysql数据库和PHP(perl或者python)，用于建立web应用平台，这些软件都是免费和开源的所以在企业相当流行<br><a id="more"></a></p>
-<p>##linux<br>发行版的linux系统很多。根据需求一般采用centos或者redhat等系统</p>
-<p>##apache<br>apache是一个开源组织他旗下有许多开源产品，其中最出名的是web服务，所以很多人误以为apache是一个web开源软件，其实并不是，这里说下web服务器的搭建</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$ yum install -y httpd</div><div class="line">$ vim /etc/httpd/conf.d/example.com.conf</div><div class="line">NameVirtualHost *:80</div><div class="line">#DirectoryIndex index.html index.html.var index.php</div><div class="line">#AddType application/x-httpd-php .php                 这两个选项是支持php</div><div class="line">&lt;VirtualHost *:80&gt;</div><div class="line">    ServerAdmin xfeng@lolmo.cn</div><div class="line">    DocumentRoot /www/up.com/</div><div class="line">    ServerName up.com</div><div class="line">    ErrorLog logs/up.com-error_log</div><div class="line">    CustomLog logs/up.com-access_log common</div><div class="line">    WSGIDaemonProcess mywsgi processes=2 threads=5 </div><div class="line">    WSGIProcessGroup mywsgi</div><div class="line">    WSGIApplicationGroup %&#123;GLOBAL&#125;</div><div class="line">&lt;/VirtualHost&gt;</div><div class="line">$ /etc/init.d/httpd restart</div></pre></td></tr></table></figure>
+        <p><strong>关于邮件服务器的搭建，如果只是希望有个个性化的域名邮件，直接运用企业邮局就可以了，这样可以节省一笔不小的开销，除非你的邮件是相当重要的，不希望被任何人看到，你可以考虑直接搭建，这里介绍iredmail的解决方案</strong><br><a id="more"></a></p>
+<h1 id="1-企业邮局"><a href="#1-企业邮局" class="headerlink" title="1.企业邮局"></a>1.企业邮局</h1><p>关于企业邮局是提供给那些不想自己搭建邮件服务器，而希望有自己的域名的个性化邮件名，这样他就可以选择去运用这个方式，这样的服务提供商包括有263云通讯、163企业邮局、qq企业邮局等，这里就只介绍qq的企业邮局，毕竟他可以免费50人的但是容量有限，一般的人是够用了。<br>进入后选择开通邮箱，里面有个免费版<br>开通后需要绑定微信和填写管理员信息，最后是填写域名，并且验证域名是否属于你的，最后是到你的域名解析出填写MX记录，这样就可以使用了，但是只有管理员才能创建邮箱<br>。<br><a href="https://exmail.qq.com" target="_blank" rel="external">QQ企业邮局</a></p>
+<h1 id="2-iredmail"><a href="#2-iredmail" class="headerlink" title="2.iredmail"></a>2.iredmail</h1><p>iredmail是一款自动化安装邮件服务器的脚本，它集中了防暴力破解，病毒检测、垃圾邮件检测，web界面的邮件收发界面等<br><a href="http://www.iredmail.com" target="_blank" rel="external">iredMail</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lolmo.cn/2016/09/27/page/" data-id="ciu1byjsk000am4n03zkhvtvv" class="article-share-link">Share</a>
+      <a data-url="http://lolmo.cn/2016/10/08/iredmail/" data-id="ciu1byjse0008m4n0e3lu6cz1" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-nginx/">linux nginx</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
 
     </footer>
   </div>
@@ -111,19 +110,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/10/08/iredmail/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          iredmail
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/09/26/9-26/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/09/27/page/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">在linux下的文件文件共享</div>
+      <div class="article-nav-title">LAMP和LNMP的搭建</div>
     </a>
   
 </nav>
@@ -133,7 +123,7 @@
 
  
   <section id="comments">
-    <div class="ds-thread" data-thread-key="post-page" data-title="LAMP和LNMP的搭建" data-url="http://lolmo.cn/2016/09/27/page/"></div>
+    <div class="ds-thread" data-thread-key="post-iredmail" data-title="iredmail" data-url="http://lolmo.cn/2016/10/08/iredmail/"></div>
     <script type="text/javascript">
     var duoshuoQuery = {
         short_name:'lolmo',
