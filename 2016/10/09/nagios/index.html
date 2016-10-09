@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: linux nginx | 熙风的博客|xfeng</title>
+  <title>nagios | 熙风的博客|xfeng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="xfeng&apos;s blog | java | scala | bi">
-<meta property="og:type" content="website">
-<meta property="og:title" content="熙风的博客|xfeng">
-<meta property="og:url" content="http://lolmo.cn/tags/linux-nginx/index.html">
+  <meta name="description" content="监控系统状态可以自己写脚本发送邮件或者信息给自己，这样能时时监视服务器的运行状态，当然有许多优秀的监视软件也存在，例如nagios、cacti、zabbix、open-falco等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nagios">
+<meta property="og:url" content="http://lolmo.cn/2016/10/09/nagios/index.html">
 <meta property="og:site_name" content="熙风的博客|xfeng">
-<meta property="og:description" content="xfeng&apos;s blog | java | scala | bi">
+<meta property="og:description" content="监控系统状态可以自己写脚本发送邮件或者信息给自己，这样能时时监视服务器的运行状态，当然有许多优秀的监视软件也存在，例如nagios、cacti、zabbix、open-falco等">
+<meta property="og:updated_time" content="2016-10-09T12:23:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="熙风的博客|xfeng">
-<meta name="twitter:description" content="xfeng&apos;s blog | java | scala | bi">
+<meta name="twitter:title" content="nagios">
+<meta name="twitter:description" content="监控系统状态可以自己写脚本发送邮件或者信息给自己，这样能时时监视服务器的运行状态，当然有许多优秀的监视软件也存在，例如nagios、cacti、zabbix、open-falco等">
   
     <link rel="alternate" href="/atom.xml" title="熙风的博客|xfeng" type="application/atom+xml">
   
@@ -69,40 +70,84 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2016/09/27/page/" class="archive-article-date">
-  <time datetime="2016-09-27T15:13:51.000Z" itemprop="datePublished">9月 27</time>
+        <section id="main"><article id="post-nagios" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/09/nagios/" class="article-date">
+  <time datetime="2016-10-09T12:12:23.000Z" itemprop="datePublished">2016-10-09</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/27/page/">LAMP和LNMP的搭建</a>
+    <h1 class="article-title" itemprop="name">
+      nagios
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>监控系统状态可以自己写脚本发送邮件或者信息给自己，这样能时时监视服务器的运行状态，当然有许多优秀的监视软件也存在，例如nagios、cacti、zabbix、open-falco等</strong><br><a id="more"></a></p>
+<h1 id="1-nagios"><a href="#1-nagios" class="headerlink" title="1.nagios"></a>1.nagios</h1><p>只能监控主机和服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/etc/nagios/nagios.cfg #主配置文件</div><div class="line">#写入加载的配置文件路径或者配置文件的目录</div><div class="line"></div><div class="line">cfg_file=/etc/nagios/objects/commands.cfg    #命令</div><div class="line">cfg_file=/etc/nagios/objects/contacts.cfg    #联系人</div><div class="line">cfg_file=/etc/nagios/objects/timeperiods.cfg #时间段</div><div class="line">cfg_file=/etc/nagios/objects/templates.cfg   #默认配置模板</div></pre></td></tr></table></figure></p>
+<p>可以配置的选项包括：<br>1.主机<br>2.主机组<br>3.服务<br>4.服务组<br>5.模板<br>6.命令<br>7.时间段<br>8.联系人<br>9.联系人组</p>
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lolmo.cn/2016/10/09/nagios/" data-id="ciu2o4rh100088en0tn6fr7mv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/10/09/ldap/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          ldap
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/08/iredmail/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">iredmail</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+ 
+  <section id="comments">
+    <div class="ds-thread" data-thread-key="post-nagios" data-title="nagios" data-url="http://lolmo.cn/2016/10/09/nagios/"></div>
+    <script type="text/javascript">
+    var duoshuoQuery = {
+        short_name:'lolmo',
+        };
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
 </section>
         
           <aside id="sidebar">
