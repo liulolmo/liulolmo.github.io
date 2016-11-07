@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lolmo.cn">
-  <title>Tag: github | 熙风的博客|xfeng</title>
+  <title>nodejs服务器的部署 | 熙风的博客|xfeng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="xfeng&apos;s blog | java | scala | bi">
-<meta property="og:type" content="website">
-<meta property="og:title" content="熙风的博客|xfeng">
-<meta property="og:url" content="http://lolmo.cn/tags/github/index.html">
+  <meta name="description" content="nodejs,是一个开放源代码、跨平台的、可用于服务器端和网络应用的运行环境。Node.js采用Google的V8引擎来执行代码。Node.js的大部分基本模块都是用JavaScript写成的。Node.js含有一系列内置模块，使得程序可以作为独立服务器运行，从而脱离Apache HTTP Server或IIS运行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nodejs服务器的部署">
+<meta property="og:url" content="http://lolmo.cn/2016/11/06/node/index.html">
 <meta property="og:site_name" content="熙风的博客|xfeng">
-<meta property="og:description" content="xfeng&apos;s blog | java | scala | bi">
+<meta property="og:description" content="nodejs,是一个开放源代码、跨平台的、可用于服务器端和网络应用的运行环境。Node.js采用Google的V8引擎来执行代码。Node.js的大部分基本模块都是用JavaScript写成的。Node.js含有一系列内置模块，使得程序可以作为独立服务器运行，从而脱离Apache HTTP Server或IIS运行">
+<meta property="og:updated_time" content="2016-11-06T15:17:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="熙风的博客|xfeng">
-<meta name="twitter:description" content="xfeng&apos;s blog | java | scala | bi">
+<meta name="twitter:title" content="nodejs服务器的部署">
+<meta name="twitter:description" content="nodejs,是一个开放源代码、跨平台的、可用于服务器端和网络应用的运行环境。Node.js采用Google的V8引擎来执行代码。Node.js的大部分基本模块都是用JavaScript写成的。Node.js含有一系列内置模块，使得程序可以作为独立服务器运行，从而脱离Apache HTTP Server或IIS运行">
   
     <link rel="alternative" href="/atom.xml" title="熙风的博客|xfeng" type="application/atom+xml">
   
@@ -141,54 +142,118 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-node" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/09/20/9-20/" class="archive-article-date">
-  	<time datetime="2016-09-20T12:41:06.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-09-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/20/9-20/">linux+git+github+node.js+hexo+domain搭建自己的博客</a>
+    <h1 class="article-title" itemprop="name">
+      nodejs服务器的部署
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>nodejs,是一个开放源代码、跨平台的、可用于服务器端和网络应用的运行环境。Node.js采用Google的V8引擎来执行代码。Node.js的大部分基本模块都是用JavaScript写成的。Node.js含有一系列内置模块，使得程序可以作为独立服务器运行，从而脱离Apache HTTP Server或IIS运行</strong><br><a id="more"></a></p>
+<h1 id="1-安装nodejs"><a href="#1-安装nodejs" class="headerlink" title="1.安装nodejs"></a>1.安装nodejs</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -</div><div class="line">$ yum install nodejs -y</div></pre></td></tr></table></figure>
+<p>关于其他版本的安装说明和源码安装可以通过官网教程来安装<br><a href="https://nodejs.org/" target="_blank" rel="external">nodejs官网</a><br>查看是否安装成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node -v  #查看版本</div></pre></td></tr></table></figure></p>
+<h1 id="2-运用"><a href="#2-运用" class="headerlink" title="2.运用"></a>2.运用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ node project.js</div></pre></td></tr></table></figure>
+<p>后台运行可以使用supervisord程序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ yum install -y supervisord</div><div class="line">$ vim /etc/supervisord.conf</div><div class="line">[program:node]    #程序名</div><div class="line">command = /usr/bin/node /node/bady/js/ibaby_project/app.js   #运行的命令</div><div class="line">autostart = true     #自动开始</div><div class="line">autorestart = true   #自动重启</div><div class="line">logfile = /var/log/supervisor/node.log  #日志文件位置</div><div class="line">log_stdout=true      #正确输出是否开启</div><div class="line">log_stderr=true      #错误输出是否开启</div><div class="line">logfile_maxbytes=50MB     #文件多大备份</div><div class="line">logfile_backups=3         #备份保留多少份</div></pre></td></tr></table></figure></p>
+<p><a href="http://ibaby.lolmo.cn/index.html" target="_blank" rel="external">用nodejs部署的网站</a></p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/06/node/" class="archive-article-date">
+  	<time datetime="2016-11-06T14:49:58.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-06</time>
+</a>
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+  
+<nav id="article-nav">
+  
+    <a href="/2016/11/06/ss/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          shadowsocks
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/10/24/openvpn/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">openvpn</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="node" data-title="nodejs服务器的部署" data-url="http://lolmo.cn/2016/11/06/node/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lolmo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 
       </div>
@@ -211,9 +276,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",

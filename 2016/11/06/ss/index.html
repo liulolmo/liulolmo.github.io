@@ -6,17 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lolmo.cn">
-  <title>Tag: github | 熙风的博客|xfeng</title>
+  <title>shadowsocks | 熙风的博客|xfeng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="xfeng&apos;s blog | java | scala | bi">
-<meta property="og:type" content="website">
-<meta property="og:title" content="熙风的博客|xfeng">
-<meta property="og:url" content="http://lolmo.cn/tags/github/index.html">
+  <meta name="description" content="解决方案的一种..方案，用于保护网络流量、加密数据传输，是使用Socks5代理方式。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shadowsocks">
+<meta property="og:url" content="http://lolmo.cn/2016/11/06/ss/index.html">
 <meta property="og:site_name" content="熙风的博客|xfeng">
-<meta property="og:description" content="xfeng&apos;s blog | java | scala | bi">
+<meta property="og:description" content="解决方案的一种..方案，用于保护网络流量、加密数据传输，是使用Socks5代理方式。">
+<meta property="og:image" content="http://odmuvqzgo.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20161107203647.png">
+<meta property="og:image" content="http://odmuvqzgo.bkt.clouddn.com/Screenshot_20161107-202452.png">
+<meta property="og:updated_time" content="2016-11-07T13:03:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="熙风的博客|xfeng">
-<meta name="twitter:description" content="xfeng&apos;s blog | java | scala | bi">
+<meta name="twitter:title" content="shadowsocks">
+<meta name="twitter:description" content="解决方案的一种..方案，用于保护网络流量、加密数据传输，是使用Socks5代理方式。">
+<meta name="twitter:image" content="http://odmuvqzgo.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20161107203647.png">
   
     <link rel="alternative" href="/atom.xml" title="熙风的博客|xfeng" type="application/atom+xml">
   
@@ -141,54 +145,113 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-ss" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/09/20/9-20/" class="archive-article-date">
-  	<time datetime="2016-09-20T12:41:06.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-09-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/09/20/9-20/">linux+git+github+node.js+hexo+domain搭建自己的博客</a>
+    <h1 class="article-title" itemprop="name">
+      shadowsocks
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>解决方案的一种..方案，用于保护网络流量、加密数据传输，是使用Socks5代理方式。</strong><br><a id="more"></a></p>
+<h1 id="1-关于VPS够购买"><a href="#1-关于VPS够购买" class="headerlink" title="1.关于VPS够购买"></a>1.关于VPS够购买</h1><p><a href="https://bandwagonhost.com" target="_blank" rel="external">搬瓦工</a>,据说已经沦陷，大多数ip都仔出口被限制了速度，蜗牛一样，只有个别的快。<br>S<a href="https://50vz.net" target="_blank" rel="external">openvzvps</a>,速度绝对比搬瓦工快，但是硬件性能、存储大小和流量等都没搬瓦工的好，但是个人学习，ss用还是很好的。</p>
+<h1 id="2-服务端部署"><a href="#2-服务端部署" class="headerlink" title="2.服务端部署"></a>2.服务端部署</h1><p>检查python，需求大于2.6<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ yum install python-setuptools   #安装easy_install </div><div class="line">$ easy_install pip</div><div class="line">$ pip install shadowsocks</div><div class="line">$ pip install -upgrade shadowsocks</div></pre></td></tr></table></figure></p>
+<p>使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssserver -p 8388 -k password -m aes-256-cfb -d start</div><div class="line">-p 端口  -k 密码 -m 加密方式 -d start/stop 后台启动/停止</div></pre></td></tr></table></figure></p>
+<p>创建配置文件来启动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ vim /etc/shadowsocks</div><div class="line">&#123;</div><div class="line">    &quot;server&quot;:&quot;my_server_ip&quot;,</div><div class="line">    &quot;server_port&quot;:8388,</div><div class="line">    &quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">    &quot;local_port&quot;:1080,</div><div class="line">    &quot;password&quot;:&quot;mypassword&quot;,</div><div class="line">    &quot;timeout&quot;:300,</div><div class="line">    &quot;method&quot;:&quot;aes-256-cfb&quot;,</div><div class="line">    &quot;fast_open&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>其中各项的解释: server 服务器地址 server_port 服务器端口 local_address 本地监听地址 local_port 本地端口 password 密码 timeout 超时时间, 单位是秒 method 加密方式 fast_open TCP_FASTOPEN功能</p>
+<p>运行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ssserver -c /etc/shadowsocks.json -d start</div><div class="line"></div><div class="line">#设置开机启动</div><div class="line">$ vim /etc/rc.local</div><div class="line">/usr/local/bin/ssserver -c /etc/shadowsocks.json -d start</div></pre></td></tr></table></figure></p>
+<h1 id="3-客户端的使用"><a href="#3-客户端的使用" class="headerlink" title="3.客户端的使用"></a>3.客户端的使用</h1><h2 id="a-windows平台"><a href="#a-windows平台" class="headerlink" title="a.windows平台"></a>a.windows平台</h2><p>运行shadowsocks.exe<br>使用界面如下：<br><img src="http://odmuvqzgo.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20161107203647.png" width="r400" height="300" alt="window" align="center"></p>
+<h2 id="b-Android平台"><a href="#b-Android平台" class="headerlink" title="b.Android平台"></a>b.Android平台</h2><p>下载 影梭APP<br>使用界面如下：<br><img src="http://odmuvqzgo.bkt.clouddn.com/Screenshot_20161107-202452.png" width="300" height="450" alt="window" align="center"></p>
+<h2 id="c-linux平台"><a href="#c-linux平台" class="headerlink" title="c.linux平台"></a>c.linux平台</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ yum install python-setuptools   #安装easy_install</div><div class="line">$ easy_install pip</div><div class="line">$ pip install shadowsocks</div><div class="line">$ pip install -upgrade shadowsocks</div><div class="line"></div><div class="line">$ sslocl -c /etc/shadowsocks.json</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/06/ss/" class="archive-article-date">
+  	<time datetime="2016-11-06T15:17:49.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-06</time>
+</a>
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li></ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/06/node/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">nodejs服务器的部署</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="ss" data-title="shadowsocks" data-url="http://lolmo.cn/2016/11/06/ss/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lolmo"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 
       </div>
@@ -211,9 +274,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",
