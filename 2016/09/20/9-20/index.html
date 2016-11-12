@@ -14,7 +14,7 @@
 <meta property="og:url" content="http://lolmo.cn/2016/09/20/9-20/index.html">
 <meta property="og:site_name" content="熙风的博客|xfeng">
 <meta property="og:description" content="github称程序员的facebook，在上面我们可以托管自己的项目，也可以去找自己喜欢或者有用的项目资源，当然还可以部署属于自己的博客，毕竟他是免费的。">
-<meta property="og:updated_time" content="2016-09-24T07:41:03.000Z">
+<meta property="og:updated_time" content="2016-11-12T08:38:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux+git+github+node.js+hexo+domain搭建自己的博客">
 <meta name="twitter:description" content="github称程序员的facebook，在上面我们可以托管自己的项目，也可以去找自己喜欢或者有用的项目资源，当然还可以部署属于自己的博客，毕竟他是免费的。">
@@ -173,7 +173,7 @@
 <p>生成完毕之后，我们可以看到多了一个public文件夹，这就是我们所谓的静态博客的目录，如果我们需要部署到服务器或者托管平台，只要将hexo生成静态之后，将public文件夹里的文件传上去就可以了,其他系统文件还是放在本地。</p>
 <h2 id="10-本地预览"><a href="#10-本地预览" class="headerlink" title="10.本地预览"></a>10.本地预览</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
 <p>浏览器中打开 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000 </a>地址，然后就可以看到</p>
-<h2 id="11-配置-config-yml"><a href="#11-配置-config-yml" class="headerlink" title="11.配置_config.yml"></a>11.配置_config.yml</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line"> <span class="built_in">type</span>:github</div><div class="line"> repository: git@github.com:liulolmo/lolmo.github.io.git</div><div class="line"> branch:master</div></pre></td></tr></table></figure>
+<h2 id="11-配置-config-yml"><a href="#11-配置-config-yml" class="headerlink" title="11.配置_config.yml"></a>11.配置_config.yml</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line"> <span class="built_in">type</span>: git</div><div class="line"> repository: git@github.com:liulolmo/lolmo.github.io.git</div><div class="line"> branch: master</div></pre></td></tr></table></figure>
 <p>用于连接github，上传到github你的个人仓库中，实现网上和主机的同步。</p>
 <p>参考文献<br>1.<a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="external">hexo你的博客</a></p>
 
@@ -317,7 +317,7 @@
     
     	<section class="tools-section tools-section-tag">
     			<div class="widget tagcloud" id="js-tagcloud">
-    				<a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/linux-nginx/" style="font-size: 10px;">linux nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/squid/" style="font-size: 10px;">squid</a> <a href="/tags/ss/" style="font-size: 10px;">ss</a> <a href="/tags/vpn/" style="font-size: 10px;">vpn</a>
+    				<a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/linux-nginx/" style="font-size: 10px;">linux nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/shadowsocks/" style="font-size: 10px;">shadowsocks</a> <a href="/tags/squid/" style="font-size: 10px;">squid</a> <a href="/tags/ss/" style="font-size: 10px;">ss</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/vpn/" style="font-size: 10px;">vpn</a>
     			</div>
     	</section>
     

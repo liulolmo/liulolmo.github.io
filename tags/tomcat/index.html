@@ -6,18 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://lolmo.cn">
-  <title>squid | 熙风的博客|xfeng</title>
+  <title>Tag: tomcat | 熙风的博客|xfeng</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="是HTTP代理服务器软件。Squid用途广泛的，可以作为缓存服务器，可以过滤流量帮助网络安全，也可以作为代理服务器链中的一环，向上级代理转发数据或直接连接互联网–维基百科">
-<meta property="og:type" content="article">
-<meta property="og:title" content="squid">
-<meta property="og:url" content="http://lolmo.cn/2016/10/12/squid/index.html">
+  <meta name="description" content="xfeng&apos;s blog | java | scala | bi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="熙风的博客|xfeng">
+<meta property="og:url" content="http://lolmo.cn/tags/tomcat/index.html">
 <meta property="og:site_name" content="熙风的博客|xfeng">
-<meta property="og:description" content="是HTTP代理服务器软件。Squid用途广泛的，可以作为缓存服务器，可以过滤流量帮助网络安全，也可以作为代理服务器链中的一环，向上级代理转发数据或直接连接互联网–维基百科">
-<meta property="og:updated_time" content="2016-10-30T15:27:44.000Z">
+<meta property="og:description" content="xfeng&apos;s blog | java | scala | bi">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="squid">
-<meta name="twitter:description" content="是HTTP代理服务器软件。Squid用途广泛的，可以作为缓存服务器，可以过滤流量帮助网络安全，也可以作为代理服务器链中的一环，向上级代理转发数据或直接连接互联网–维基百科">
+<meta name="twitter:title" content="熙风的博客|xfeng">
+<meta name="twitter:description" content="xfeng&apos;s blog | java | scala | bi">
   
     <link rel="alternative" href="/atom.xml" title="熙风的博客|xfeng" type="application/atom+xml">
   
@@ -142,116 +141,54 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-squid" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      squid
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2016" class="archive-year">2016</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2016/11/07/tomcat/" class="archive-article-date">
+  	<time datetime="2016-11-07T13:17:17.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-07</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2016/11/07/tomcat/">tomcat部署在linux下</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>是HTTP代理服务器软件。Squid用途广泛的，可以作为缓存服务器，可以过滤流量帮助网络安全，也可以作为代理服务器链中的一环，向上级代理转发数据或直接连接互联网–维基百科</strong></p>
-<a id="more"></a>
-<h1 id="1-squid正向代理"><a href="#1-squid正向代理" class="headerlink" title="1.squid正向代理"></a>1.squid正向代理</h1><p>缓存保存   上网加速   节约流量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">$ yum install squid</div><div class="line">$ servce squid start</div><div class="line">$ vim /etc/squid/squid.conf</div><div class="line">http_access deny | allow</div><div class="line">http_port 3218 默认</div><div class="line"></div><div class="line">acl aclname mode modename</div><div class="line"></div><div class="line">$ openssl passwd -apr1 uplooking  #用apach加密的密码</div><div class="line">$ vim /etc/sysctl.conf            #修改内核参数</div><div class="line"></div><div class="line">sysctl -a net.ipv4.icmp_echo_ignore_all=1 </div><div class="line">#-w 命令修改内核参数忽略 -a 列出来 </div><div class="line">net.ipv4.ip_forward  #是否允许包转发 -p 修改配置文件，用这个启用</div><div class="line">iptables -t nat -I POSTROUTING -p udp --dport 3218 -j MASQUERADE  </div><div class="line">#MASQUERADE 伪装：动态的源地址转化</div></pre></td></tr></table></figure></p>
-<p>#2.squid透明代理</p>
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/10/12/squid/" class="archive-article-date">
-  	<time datetime="2016-10-12T14:37:45.000Z" itemprop="datePublished"><i class="icon-clock"></i>2016-10-12</time>
-</a>
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/squid/">squid</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tomcat/">tomcat</a></li></ul>
 	</div>
 
-      
+          
 
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2016/10/24/openvpn/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          openvpn
-        
-      </div>
-    </a>
   
   
-    <a href="/2016/10/10/arukqs/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">arukas</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-
-
-<div class="share_jia">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">Share to: &nbsp; </span>
-		<a class="jiathis_button_facebook"></a> 
-	    <a class="jiathis_button_twitter"></a>
-	    <a class="jiathis_button_plus"></a> 
-	    <a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
-</div>
-
-
-
-
-
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="squid" data-title="squid" data-url="http://lolmo.cn/2016/10/12/squid/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"lolmo"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-
-
+    
 
 
       </div>
@@ -274,9 +211,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",
